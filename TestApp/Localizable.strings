@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  TestApp
+
+  Created by Anton on 31.01.2023.
+  
+*/
+
+//Main screen
+"users_list_title" = "Users";
+"user_name_title_text" = "Login:";
+
+
+//Error
+"error_title" = "Error";
+"error_action_ok" = "Ok";
+
+"error_no_internet_text" = "No internet connection!";
+
+
+//User screen
+"user_login_title" = "Login:";
+"user_name_title" = "Name:";
+"user_type_title" = "Type:";
+"user_company_title" = "Company:";
+"user_email_title" = "Email:";
+"user_bio_title" = "Bio:";
+"user_create_date_title" = "Create date:";
+
+

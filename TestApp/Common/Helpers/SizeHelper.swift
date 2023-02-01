@@ -13,11 +13,11 @@ extension BinaryFloatingPoint {
     }
     
     var sizeW: CGFloat {
-        floor(CGFloat(self) * UIScreen.main.bounds.width / size.width)
+        floor(CGFloat(self) * UIScreen.main.bounds.width / size.width).roundToInt()
     }
     
     var sizeH: CGFloat {
-        floor(CGFloat(self) * UIScreen.main.bounds.height / size.height)
+        floor(CGFloat(self) * UIScreen.main.bounds.height / size.height).roundToInt()
     }
     
     var lessThanOrEqualToSizeW: CGFloat {

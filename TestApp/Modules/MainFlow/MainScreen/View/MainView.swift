@@ -12,27 +12,22 @@ class MainView: UIView {
     
     let titleLabel: UILabel = {
         let obj = UILabel()
-        obj.text = "Title"
-        
+        obj.font = .Gilroy(type: .bold, ofSize: 32.sizeH)
+        obj.text = "users_list_title".localized
+        obj.textColor = .Custom(type: .purple)
+
         return obj
     }()
     
     let topDividingLineView: UIView = {
         let obj = UIView()
-        obj.backgroundColor = .gray
+        obj.backgroundColor = .Custom(type: .purple)
         return obj
     }()
-    
-    let bottomDividingLineView: UIView = {
-        let obj = UIView()
-        obj.backgroundColor = .gray
-        return obj
-    }()
-    
+
     let usersTableView: UITableView = {
         let obj = UITableView()
         obj.showsVerticalScrollIndicator = false
-        obj.separatorStyle = .none
         obj.backgroundColor = .clear
         return obj
     }()
@@ -47,38 +42,34 @@ class MainView: UIView {
     }
     
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = .Custom(type: .blueGray)
         
         addSubview(titleLabel)
         addSubview(topDividingLineView)
         addSubview(usersTableView)
-        addSubview(bottomDividingLineView)
         
         makeConstraints()
     }
     
     private func makeConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16.sizeH)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24.sizeH)
             make.centerX.equalToSuperview()
         }
         
         topDividingLineView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16.sizeH)
             make.height.equalTo(1)
-            make.leading.trailing.equalToSuperview().inset(16.sizeW)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(16.sizeW)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-16.sizeW)
         }
         
         usersTableView.snp.makeConstraints { make in
             make.top.equalTo(topDividingLineView.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(16.sizeW)
-            make.bottom.equalTo(bottomDividingLineView.snp.top)
-        }
-        
-        bottomDividingLineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.leading.trailing.equalToSuperview().inset(16.sizeW)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16.sizeH)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(24.sizeW)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-24.sizeW)
+            make.bottom.equalToSuperview()
         }
     }
 }
+
